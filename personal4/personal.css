@@ -1,0 +1,182 @@
+@charset "utf-8";
+
+/* Styles for all screen sizes */
+
+html {
+    background-color: hsl(200, 20%, 47%);
+}
+
+body {
+    background-color: #F1F8E9;
+    color: #1B1B1B;
+    font-family: Verdana, Geneva, sans-serif;
+}
+
+header {
+    text-align: center;
+}
+
+header img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+h1,
+h2 {
+    text-shadow: 4px 6px 5px gray;
+}
+
+h2 {
+    font-size: 1.3em;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    display: block;
+    background-color: #2E7D32;
+    color: white;
+    line-height: 2.8em;
+    text-align: center;
+    text-decoration: none;
+}
+
+nav a:hover {
+    background-color: #C8E6C9;
+    color: #1B3A1B;
+}
+
+/* Hide the navicon on larger screens */
+a#navicon {
+    display: none;
+}
+
+main {
+    padding: 20px;
+}
+
+footer {
+    clear: both;
+    background-color: #2E7D32;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+footer a {
+    color: white;
+}
+
+/* Flex gallery */
+div.gallery {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+div.imgGallery {
+    box-sizing: border-box;
+    padding: 4px;
+}
+
+div.imgGallery img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Styles for devices 768 pixels wide or smaller */
+@media only screen and (max-width: 768px) {
+
+    body {
+        width: 100%;
+        margin: 0;
+    }
+
+    /* Display the hamburger navicon on mobile devices */
+    a#navicon {
+        display: block;
+        font-size: 2em;
+        border-bottom: none;
+    }
+
+    /* Hide the menu until the navicon is used */
+    nav ul {
+        display: none;
+    }
+
+    a#navicon:hover + ul,
+    nav ul:hover {
+        display: block;
+    }
+
+    nav li {
+        float: none;
+        font-size: x-large;
+        width: 100%;
+    }
+
+    nav a {
+        border-bottom: 1px solid black;
+    }
+
+    a#navicon {
+        border-bottom: none;
+    }
+
+    main > img {
+        display: block;
+        float: none;
+        width: 90%;
+        margin: auto;
+    }
+
+    /* Two-column gallery */
+    div.imgGallery {
+        width: 50%
+    }
+}
+
+/* One-column gallery on smaller mobile screens */
+@media only screen and (max-width: 480px) {
+
+    div.imgGallery {
+        width: 100%;
+    }
+}
+
+/* Styles for devices 769 pixels wide or larger */
+@media only screen and (min-width: 769px) {
+
+    html {
+        background: hsl(200, 20%, 47%) url("back_pic.jpg") center / cover no-repeat fixed;
+    }
+
+    body {
+        width: 90%;
+        margin: auto;
+    }
+
+    nav ul {
+        display: flex;
+    }
+
+    nav li {
+        width: 20%;
+    }
+
+    main > img {
+        float: right;
+        width: 25%;
+        padding: 25px;
+    }
+
+    /* Four-column gallery */
+    div.imgGallery {
+        width: 25%;
+    }
+}
